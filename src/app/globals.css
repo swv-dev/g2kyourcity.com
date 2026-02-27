@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #1E3A5F;
+  --navy-dark: #152942;
+  --gold: #FFD700;
+  --gold-dark: #E6C200;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background-color: #fafafa;
+}
+
+/* Video hero styling */
+.hero-video {
+  object-fit: contain;
+  max-height: 70vh;
+}
+
+/* Section styling */
+.section-padding {
+  @apply py-16 md:py-24 px-4 md:px-8;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Gold accent underline */
+.gold-underline {
+  position: relative;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--gold);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-navy text-white px-6 py-3 rounded-lg font-semibold
+         transition-all duration-300 hover:bg-navy-dark hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-gold text-navy px-6 py-3 rounded-lg font-semibold
+         transition-all duration-300 hover:bg-gold-dark hover:shadow-lg;
+}
+
+.btn-outline {
+  @apply border-2 border-navy text-navy px-6 py-3 rounded-lg font-semibold
+         transition-all duration-300 hover:bg-navy hover:text-white;
+}
