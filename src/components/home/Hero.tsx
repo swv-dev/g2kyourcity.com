@@ -23,6 +23,14 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
+            <Image
+              src="/images/henderson-nc-collage.png"
+              alt="Henderson NC"
+              width={600}
+              height={250}
+              className="w-full max-w-lg mx-auto lg:mx-0 mb-6"
+              priority
+            />
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6">
               Explore Local Events &amp; Unique Experiences
             </h1>

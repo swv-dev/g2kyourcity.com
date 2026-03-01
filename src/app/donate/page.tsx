@@ -4,21 +4,30 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const donationTiers = [
-  { amount: 10, label: 'Supporter', description: 'Buy a developer a coffee and keep the app running.' },
-  { amount: 25, label: 'Advocate', description: 'Help us add a new local business to the platform.' },
-  { amount: 50, label: 'Champion', description: 'Fund a month of community event coverage.' },
-  { amount: 100, label: 'Patron', description: 'Sponsor a featured Henderson experience in the app.' },
+  { amount: 10, label: 'Believer', description: 'You believe in this vision — and that means everything to us.' },
+  { amount: 25, label: 'Backer', description: 'Help us get one step closer to putting this app in people\'s hands.' },
+  { amount: 50, label: 'Builder', description: 'You\'re literally helping build something Henderson has never had.' },
+  { amount: 100, label: 'Founding Supporter', description: 'You\'re the reason this happens. Founding supporters make the first version real.' },
 ]
 
 const impactItems = [
   {
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+      </svg>
+    ),
+    title: 'AR Emblems for Businesses',
+    description: 'Businesses will advertise through interactive AR emblems in the app — spin them for perks just for showing up. Your donation helps us build this one-of-a-kind feature.',
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
       </svg>
     ),
-    title: 'Free App for Everyone',
-    description: 'G2K Henderson will always be free to download. Your donation keeps it that way — no ads, no paywalls.',
+    title: 'Free & Premium Tiers',
+    description: 'G2K will always have a free version. Premium unlocks extra features for power users. Your support helps us launch both.',
   },
   {
     icon: (
@@ -27,25 +36,16 @@ const impactItems = [
       </svg>
     ),
     title: 'Local Business Visibility',
-    description: 'Every dollar helps us verify and list more Henderson businesses, giving them free exposure to the community.',
+    description: 'Every dollar helps us verify and list more Henderson businesses, giving them exposure to the community before ad revenue kicks in.',
   },
   {
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
       </svg>
     ),
-    title: 'Event Coverage',
-    description: 'We attend, photograph, and promote local events so the whole county knows what\'s happening.',
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
-      </svg>
-    ),
-    title: 'The Local Loop Podcast',
-    description: 'Support real conversations with the people making Henderson happen — equipment, editing, and production.',
+    title: 'Accelerate the Launch',
+    description: 'We have a plan to make this sustainable. Donations get us to launch faster — so the app can start supporting itself.',
   },
 ]
 
@@ -58,7 +58,6 @@ export default function DonatePage() {
 
   const handleDonate = () => {
     if (!activeAmount || activeAmount < 1) return
-    // mailto fallback until payment processor is set up
     const subject = `G2K Donation — $${activeAmount} ${frequency === 'monthly' ? '/ month' : 'one-time'}`
     const body = `I'd like to donate $${activeAmount} ${frequency === 'monthly' ? 'monthly' : '(one-time)'} to support G2K Your City.\n\nPlease send me payment instructions.`
     window.location.href = `mailto:info@g2khenderson.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
@@ -80,14 +79,14 @@ export default function DonatePage() {
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
               </svg>
-              Support Your Community
+              Back the Vision
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Help Us Put Henderson<br />on the Map
+              Help Us Build Something<br />Henderson Has Never Had
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              G2K is built by people who love this town. Your donation keeps the app free,
-              supports local businesses, and helps more people discover everything Henderson has to offer.
+              G2K has a plan to sustain itself — business advertising, AR perks, premium features.
+              But right now, we need people who believe in this vision to help us get it off the ground.
             </p>
           </div>
         </div>
@@ -190,17 +189,17 @@ export default function DonatePage() {
         </div>
       </section>
 
-      {/* What Your Donation Supports */}
+      {/* How G2K Works — the business model */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-gold font-medium text-sm uppercase tracking-wider">Your Impact</span>
+            <span className="text-gold font-medium text-sm uppercase tracking-wider">The Vision</span>
             <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2 mb-4">
-              Where Your Money Goes
+              This Isn&apos;t Charity — It&apos;s a Head Start
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Every dollar stays local. We&apos;re a community project — not a corporation.
-              Here&apos;s exactly what your support makes possible.
+              G2K is designed to sustain itself through business advertising and premium features.
+              Your donation isn&apos;t keeping the lights on forever — it&apos;s getting us to the starting line.
             </p>
           </div>
 
@@ -233,10 +232,10 @@ export default function DonatePage() {
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  '100% of donations go directly to app development and community coverage',
-                  'Every business listing is verified — no pay-to-play, no favoritism',
-                  'The app will always be free to download and use',
-                  'Open roadmap — you can see exactly what we\'re building next',
+                  'Businesses advertise through AR emblems — spin for perks just for showing up',
+                  'Free version for everyone, premium for power users',
+                  'Your donation goes directly to development — getting us to launch',
+                  'Once live, the app sustains itself through business partnerships',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start">
                     <svg className="w-6 h-6 text-gold mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -275,7 +274,7 @@ export default function DonatePage() {
             Not Ready to Donate?
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto mb-12">
-            There are other ways to support the mission. Every bit helps.
+            There are other ways to support the mission. Every bit helps us get closer to launch.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -287,7 +286,7 @@ export default function DonatePage() {
               </div>
               <h3 className="text-lg font-semibold mb-2">Share the Word</h3>
               <p className="text-gray-400 text-sm">
-                Tell a friend about G2K. The more people who use it, the stronger our community gets.
+                Tell a friend about G2K. The more people who know about it, the stronger the launch.
               </p>
             </div>
 
