@@ -151,7 +151,7 @@ export default function Events() {
           <p className="text-gray-300 mb-6 max-w-xl mx-auto">
             Help us keep the community connected. Submit your event and reach locals and visitors alike.
           </p>
-          <Link href="/submit-event" className="btn-secondary">
+          <Link href="/submit" className="btn-secondary">
             Submit an Event
           </Link>
         </div>
