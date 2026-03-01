@@ -23,8 +23,15 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6">
-              Get to Know<br />Your City
+            <h1 className="mb-6">
+              <Image
+                src="/images/g2k-your-city-logo-full.png"
+                alt="Get 2 Know Your City"
+                width={500}
+                height={500}
+                className="w-full max-w-md mx-auto lg:mx-0"
+                priority
+              />
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
               Discover local events, hidden gems, and unique experiences in your community.
