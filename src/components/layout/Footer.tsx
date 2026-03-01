@@ -5,6 +5,7 @@ const footerLinks = {
   explore: [
     { href: '/henderson', label: 'Henderson, NC' },
     { href: '/local-loop', label: 'The Local Loop' },
+    { href: '/advertise', label: 'Advertise with G2K' },
   ],
   support: [
     { href: '/donate', label: 'Donate' },
