@@ -7,14 +7,14 @@ import Footer from '@/components/layout/Footer'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Get 2 Know Henderson | Explore Vance County, NC',
-  description: 'Discover local events, hidden gems, and unique experiences in Henderson and Vance County, North Carolina. Your guide to community activities, local businesses, and everything that makes our town special.',
-  keywords: 'Henderson NC, Vance County, local events, things to do, tourism, community, North Carolina',
+  title: 'G2K Your City | Get to Know Your City',
+  description: 'Discover local events, hidden gems, and unique experiences in your community. One app, every city.',
+  keywords: 'local events, things to do, tourism, community, North Carolina, Henderson, Vance County',
   openGraph: {
-    title: 'Get 2 Know Henderson',
-    description: 'Explore local events and unique experiences in Vance County, NC',
-    url: 'https://g2khenderson.com',
-    siteName: 'Get 2 Know Henderson',
+    title: 'G2K Your City',
+    description: 'Discover local events, hidden gems, and unique experiences in your community.',
+    url: 'https://g2kyourcity.com',
+    siteName: 'G2K Your City',
     locale: 'en_US',
     type: 'website',
   },

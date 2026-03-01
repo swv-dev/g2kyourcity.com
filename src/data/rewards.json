@@ -1,0 +1,14 @@
+[
+  { "id": 1, "text": "10% off at Sadie's Coffee!", "emoji": "☕", "rarity": "common" },
+  { "id": 2, "text": "Free cookie at Vegan Mami!", "emoji": "🍪", "rarity": "common" },
+  { "id": 3, "text": "BOGO appetizer at George's!", "emoji": "🍽️", "rarity": "uncommon" },
+  { "id": 4, "text": "Free kayak rental at Kerr Lake!", "emoji": "🚣", "rarity": "rare" },
+  { "id": 5, "text": "$5 off at Interiors Downtown!", "emoji": "🎁", "rarity": "common" },
+  { "id": 6, "text": "Free museum entry!", "emoji": "🏛️", "rarity": "uncommon" },
+  { "id": 7, "text": "25% off at Nella Roo's!", "emoji": "👗", "rarity": "rare" },
+  { "id": 8, "text": "Free BBQ side at Skipper's!", "emoji": "🍖", "rarity": "common" },
+  { "id": 9, "text": "VIP McGregor Hall tickets!", "emoji": "🎭", "rarity": "legendary" },
+  { "id": 10, "text": "Free yoga class at Studio Mainstreet!", "emoji": "🧘", "rarity": "uncommon" },
+  { "id": 11, "text": "50 bonus Explorer Points!", "emoji": "⭐", "rarity": "common" },
+  { "id": 12, "text": "Henderson Ambassador badge!", "emoji": "🏆", "rarity": "legendary" }
+]

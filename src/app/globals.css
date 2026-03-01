@@ -64,3 +64,61 @@ body {
   @apply border-2 border-navy text-navy px-6 py-3 rounded-lg font-semibold
          transition-all duration-300 hover:bg-navy hover:text-white;
 }
+
+/* Simulator animations */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(247, 179, 43, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(247, 179, 43, 0.6); }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-orbit {
+  animation: orbit 8s linear infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* iPhone 3D tilt effect */
+.iphone-tilt {
+  perspective: 1000px;
+  transform: rotateY(-5deg) rotateX(2deg);
+  transition: transform 0.3s ease;
+}
+.iphone-tilt:hover {
+  transform: rotateY(0deg) rotateX(0deg);
+}
+
+/* Cap Leaflet z-indexes so overlays render above the map */
+.leaflet-pane { z-index: 1 !important; }
+.leaflet-top, .leaflet-bottom { z-index: 2 !important; }
+.leaflet-control { z-index: 2 !important; }
+
+/* Custom map pin — remove default leaflet icon styling */
+.custom-pin {
+  background: none !important;
+  border: none !important;
+}

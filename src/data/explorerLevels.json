@@ -1,0 +1,7 @@
+[
+  { "level": 1, "name": "Newcomer", "emoji": "👤", "icon": "person.fill", "colorHex": "#9CA3AF", "minScore": 0, "maxScore": 99 },
+  { "level": 2, "name": "Local", "emoji": "📍", "icon": "mappin.circle.fill", "colorHex": "#22C55E", "minScore": 100, "maxScore": 499 },
+  { "level": 3, "name": "Explorer", "emoji": "🔭", "icon": "binoculars.fill", "colorHex": "#3B82F6", "minScore": 500, "maxScore": 999 },
+  { "level": 4, "name": "Guide", "emoji": "⭐", "icon": "star.fill", "colorHex": "#8B5CF6", "minScore": 1000, "maxScore": 2499 },
+  { "level": 5, "name": "Ambassador", "emoji": "👑", "icon": "crown.fill", "colorHex": "#F7B32B", "minScore": 2500, "maxScore": 10000 }
+]

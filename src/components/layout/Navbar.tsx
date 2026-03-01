@@ -6,8 +6,7 @@ import Image from 'next/image'
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/events', label: 'Events' },
-  { href: '/places', label: 'Places' },
+  { href: '/henderson', label: 'Henderson' },
   { href: '/local-loop', label: 'The Local Loop' },
   { href: '/donate', label: 'Donate' },
 ]
@@ -22,8 +21,8 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/g2k_henderson_logo.png"
-              alt="Get 2 Know Henderson"
+              src="/images/g2k_your_city_logo.png"
+              alt="Get 2 Know Your City"
               width={240}
               height={80}
               className="h-16 md:h-20 w-auto"

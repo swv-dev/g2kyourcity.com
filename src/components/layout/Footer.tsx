@@ -3,9 +3,7 @@ import Image from 'next/image'
 
 const footerLinks = {
   explore: [
-    { href: '/events', label: 'Events' },
-    { href: '/places', label: 'Places' },
-    { href: '/experiences', label: 'Experiences' },
+    { href: '/henderson', label: 'Henderson, NC' },
     { href: '/local-loop', label: 'The Local Loop' },
   ],
   support: [
@@ -65,7 +63,7 @@ export default function Footer() {
               className="h-12 w-auto brightness-0 invert mb-4"
             />
             <p className="text-gray-300 text-sm">
-              Your guide to local events, hidden gems, and unique experiences in Henderson and Vance County, NC.
+              Discover local events, hidden gems, and unique experiences in your community. One app, every city.
             </p>
             <div className="flex space-x-4 mt-4">
               {socialLinks.map((social) => (
@@ -118,8 +116,8 @@ export default function Footer() {
               <p>100 South Garnett Street</p>
               <p>Henderson, NC 27536</p>
               <p className="pt-2">
-                <a href="mailto:info@g2khenderson.com" className="hover:text-white transition-colors">
-                  info@g2khenderson.com
+                <a href="mailto:info@g2kyourcity.com" className="hover:text-white transition-colors">
+                  info@g2kyourcity.com
                 </a>
               </p>
             </address>
@@ -128,7 +126,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Get 2 Know Henderson. All rights reserved.
+            &copy; {new Date().getFullYear()} G2K Your City. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {footerLinks.legal.map((link) => (

@@ -19,6 +19,8 @@ const config: Config = {
           dark: '#E6C200',
           light: '#FFDF33',
         },
+        g2kYellow: '#F7B32B',
+        g2kNavy: '#1B365D',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

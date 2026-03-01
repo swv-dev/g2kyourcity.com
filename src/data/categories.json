@@ -1,0 +1,20 @@
+[
+  { "id": "kerrLake", "name": "Kerr Lake", "emoji": "🌊", "colorHex": "#0EA5E9" },
+  { "id": "downtown", "name": "Downtown", "emoji": "🏙️", "colorHex": "#E8A838" },
+  { "id": "outdoors", "name": "Outdoors", "emoji": "🌿", "colorHex": "#22C55E" },
+  { "id": "foodDrink", "name": "Food & Drink", "emoji": "🍴", "colorHex": "#F97316" },
+  { "id": "artsCulture", "name": "Arts & Culture", "emoji": "🎨", "colorHex": "#8B5CF6" },
+  { "id": "history", "name": "History", "emoji": "🏛️", "colorHex": "#C8956C" },
+  { "id": "shopping", "name": "Shopping", "emoji": "🛍️", "colorHex": "#EC4899" },
+  { "id": "events", "name": "Events", "emoji": "📅", "colorHex": "#3B82F6" },
+  { "id": "recreation", "name": "Recreation", "emoji": "🏃", "colorHex": "#14B8A6" },
+  { "id": "community", "name": "Community", "emoji": "👥", "colorHex": "#6366F1" },
+  { "id": "services", "name": "Services", "emoji": "🔧", "colorHex": "#94A3B8" },
+  { "id": "nightlife", "name": "Nightlife", "emoji": "🌙", "colorHex": "#E040FB" },
+  { "id": "schools", "name": "Schools", "emoji": "🎓", "colorHex": "#0891B2" },
+  { "id": "lodging", "name": "Lodging", "emoji": "🛏️", "colorHex": "#E07A5F" },
+  { "id": "health", "name": "Health", "emoji": "🏥", "colorHex": "#F43F5E" },
+  { "id": "faith", "name": "Faith", "emoji": "🔔", "colorHex": "#B07BAC" },
+  { "id": "trails", "name": "Trails", "emoji": "🥾", "colorHex": "#84CC16" },
+  { "id": "banking", "name": "Banking", "emoji": "💵", "colorHex": "#0D9488" }
+]

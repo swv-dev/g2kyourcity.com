@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "name": "Downtown Heritage Trail",
+    "description": "Walk through Henderson's historic downtown — from the 1870 train depot to the Ben E. King mural.",
+    "duration": "2 hours",
+    "stops": [
+      { "placeId": 29, "name": "Garnett Street Station", "note": "Start at the historic 1870 railroad depot" },
+      { "placeId": 50, "name": "Fire Station No. 2 & Clock Tower", "note": "Iconic 1908 landmark" },
+      { "placeId": 49, "name": "Vance County Courthouse", "note": "Heart of downtown government" },
+      { "placeId": 25, "name": "McGregor Hall", "note": "1,000-seat performing arts center" },
+      { "placeId": 28, "name": "Corbitt Truck Museum", "note": "Henderson-built trucks since 1899" }
+    ],
+    "emoji": "🏛️"
+  },
+  {
+    "id": 2,
+    "name": "Kerr Lake Adventure Day",
+    "description": "Spend a full day exploring 50,000 acres of lake, trails, and natural beauty.",
+    "duration": "Full day",
+    "stops": [
+      { "placeId": 19, "name": "Kerr Lake State Recreation Area", "note": "Start at the main entrance" },
+      { "placeId": 21, "name": "Satterwhite Point", "note": "Swimming and boat launch" },
+      { "placeId": 22, "name": "Henderson Country Club", "note": "Optional: 18 holes at the historic course" }
+    ],
+    "emoji": "🚣"
+  },
+  {
+    "id": 3,
+    "name": "Taste of Henderson",
+    "description": "Sample the best flavors Henderson has to offer — from BBQ to vegan to international.",
+    "duration": "3 hours",
+    "stops": [
+      { "placeId": 1, "name": "Sadie's Coffee Corner", "note": "Start with locally roasted coffee" },
+      { "placeId": 3, "name": "Vegan Mami", "note": "Creative plant-based lunch" },
+      { "placeId": 4, "name": "Punjabi Tadka", "note": "Perfect 5.0-rated Indian cuisine" },
+      { "placeId": 5, "name": "Skipper's Forsyth's Bar-B-Q", "note": "Legendary BBQ since 1946" }
+    ],
+    "emoji": "🍽️"
+  }
+]

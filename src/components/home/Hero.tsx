@@ -1,38 +1,15 @@
 'use client'
 
-import { useRef, useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Image from 'next/image'
 
+const SimulatorShell = dynamic(
+  () => import('../simulator/SimulatorShell'),
+  { ssr: false }
+)
+
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [hasStarted, setHasStarted] = useState(false)
-
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play()
-        .then(() => {
-          setIsPlaying(true)
-          setHasStarted(true)
-        })
-        .catch((error) => {
-          console.error('Video play failed:', error)
-        })
-    }
-  }
-
-  const handleVideoClick = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause()
-        setIsPlaying(false)
-      } else {
-        handlePlay()
-      }
-    }
-  }
-
   return (
     <section
       className="relative min-h-[90vh] flex items-center"
@@ -63,46 +40,14 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Video */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black">
-              <video
-                ref={videoRef}
-                className="w-full hero-video cursor-pointer"
-                poster="/images/g2k_poster.png"
-                playsInline
-                onClick={handleVideoClick}
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-                onEnded={() => {
-                  setIsPlaying(false)
-                  if (videoRef.current) {
-                    videoRef.current.currentTime = 0
-                  }
-                }}
-              >
-                <source src="/videos/g2k_promo_final.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-
-              {/* Play button overlay */}
-              {!isPlaying && (
-                <button
-                  onClick={handlePlay}
-                  className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors group"
-                  aria-label="Play video"
-                >
-                  <div className="w-20 h-20 rounded-full bg-gold flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <svg className="w-8 h-8 text-navy ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </button>
-              )}
+          {/* Interactive App Simulator */}
+          <div className="relative flex flex-col items-center">
+            <div className="transform scale-[0.85] sm:scale-90 md:scale-95 lg:scale-100 origin-top">
+              <SimulatorShell />
             </div>
 
             {/* App store badge */}
-            <div className="mt-6 text-center">
+            <div className="mt-4 text-center">
               <p className="text-gray-500 text-sm mb-2">Coming soon to</p>
               <div className="flex justify-center gap-4">
                 <Image

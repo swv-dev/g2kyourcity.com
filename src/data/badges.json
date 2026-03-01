@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Kerr Lake Explorer", "emoji": "🌊", "icon": "water.waves", "colorHex": "#0EA5E9", "description": "Visit 3 spots at Kerr Lake", "requirement": 3, "earned": true },
+  { "id": 2, "name": "Downtown Discoverer", "emoji": "🏙️", "icon": "building.2.fill", "colorHex": "#6366F1", "description": "Check in at 5 downtown businesses", "requirement": 5, "earned": true },
+  { "id": 3, "name": "Event Enthusiast", "emoji": "🎟️", "icon": "ticket.fill", "colorHex": "#F97316", "description": "Attend 3 events", "requirement": 3, "earned": true },
+  { "id": 4, "name": "History Buff", "emoji": "📖", "icon": "book.closed.fill", "colorHex": "#C8956C", "description": "Visit all historical landmarks", "requirement": 6, "earned": false },
+  { "id": 5, "name": "Local Foodie", "emoji": "🍽️", "icon": "fork.knife.circle.fill", "colorHex": "#EF4444", "description": "Visit 5 restaurants", "requirement": 5, "earned": false },
+  { "id": 6, "name": "Weekend Warrior", "emoji": "🔥", "icon": "flame.fill", "colorHex": "#F59E0B", "description": "Check in 3 days in a row", "requirement": 3, "earned": false }
+]
