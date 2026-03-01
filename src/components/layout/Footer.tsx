@@ -8,9 +8,10 @@ const footerLinks = {
   ],
   support: [
     { href: '/donate', label: 'Donate' },
-    { href: '/submit-event', label: 'Submit an Event' },
+    { href: '/community', label: 'Get Involved' },
+    { href: '/submit', label: 'Submit an Event' },
+    { href: '/apply', label: 'Apply for Account' },
     { href: '/contact', label: 'Contact Us' },
-    { href: '/about', label: 'About G2K' },
   ],
   legal: [
     { href: '/privacy', label: 'Privacy Policy' },

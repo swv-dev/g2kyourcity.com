@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/henderson', label: 'Henderson' },
   { href: '/local-loop', label: 'The Local Loop' },
+  { href: '/community', label: 'Get Involved' },
   { href: '/donate', label: 'Donate' },
 ]
 
