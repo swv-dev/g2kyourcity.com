@@ -9,13 +9,16 @@ interface IPhoneFrameProps {
 export default function IPhoneFrame({ children }: IPhoneFrameProps) {
   return (
     <div className="iphone-tilt relative mx-auto" style={{ width: 320, height: 660 }}>
-      {/* Outer shell */}
-      <div className="relative w-full h-full rounded-[40px] bg-black shadow-2xl border-[3px] border-gray-800 overflow-hidden">
+      {/* Outer shell — isolate stacking context so 3D transform doesn't break overflow clipping */}
+      <div
+        className="relative w-full h-full rounded-[40px] bg-black shadow-2xl border-[3px] border-gray-800"
+        style={{ isolation: 'isolate', overflow: 'hidden' }}
+      >
         {/* Dynamic Island */}
         <div className="absolute top-3 left-1/2 -translate-x-1/2 z-50 w-[100px] h-[28px] bg-black rounded-full" />
 
         {/* Status bar */}
-        <div className="absolute top-0 left-0 right-0 z-50 h-12 flex items-end justify-between px-8 pb-0.5">
+        <div className="absolute top-0 left-0 right-0 z-40 h-12 flex items-end justify-between px-8 pb-0.5">
           <span className="text-white text-[11px] font-semibold">9:41</span>
           <div className="flex items-center gap-1">
             <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -35,8 +38,8 @@ export default function IPhoneFrame({ children }: IPhoneFrameProps) {
           </div>
         </div>
 
-        {/* Screen content area — starts below status bar */}
-        <div className="absolute inset-0 top-12 bottom-0 bg-[#F8F9FA] overflow-hidden">
+        {/* Screen content area — rounded bottom to match frame, clipped */}
+        <div className="absolute inset-0 top-12 bottom-0 rounded-b-[37px] bg-[#F8F9FA] overflow-hidden">
           {children}
         </div>
 

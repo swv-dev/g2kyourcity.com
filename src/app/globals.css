@@ -102,10 +102,11 @@ body {
   display: none;
 }
 
-/* iPhone 3D tilt effect */
+/* iPhone 3D tilt effect — transform-style flat keeps overflow clipping working */
 .iphone-tilt {
   perspective: 1000px;
   transform: rotateY(-5deg) rotateX(2deg);
+  transform-style: flat;
   transition: transform 0.3s ease;
 }
 .iphone-tilt:hover {
@@ -116,6 +117,16 @@ body {
 .leaflet-pane { z-index: 1 !important; }
 .leaflet-top, .leaflet-bottom { z-index: 2 !important; }
 .leaflet-control { z-index: 2 !important; }
+
+/* Warm up map tiles to match iOS G2K style (beige base, green parks, gold roads) */
+.g2k-map .leaflet-tile-pane {
+  filter: saturate(1.15) sepia(0.12) hue-rotate(-8deg) brightness(1.02);
+}
+
+/* Keep pins crisp — don't apply filter to marker pane */
+.g2k-map .leaflet-marker-pane {
+  filter: none;
+}
 
 /* Custom map pin — remove default leaflet icon styling */
 .custom-pin {

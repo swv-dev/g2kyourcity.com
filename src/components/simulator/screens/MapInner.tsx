@@ -12,8 +12,8 @@ interface MapInnerProps {
   onPinTap: (place: Place) => void
 }
 
-// Henderson center coordinates
-const HENDERSON_CENTER: [number, number] = [36.3295, -78.3990]
+// Henderson center coordinates (matches iOS: 36.3300, -78.4100)
+const HENDERSON_CENTER: [number, number] = [36.3300, -78.4100]
 
 function MapMarkers({ places, categories, onPinTap }: MapInnerProps) {
   const map = useMap()
@@ -34,16 +34,17 @@ function MapMarkers({ places, categories, onPinTap }: MapInnerProps) {
       const icon = L.divIcon({
         className: 'custom-pin',
         html: `<div style="
-          width: 22px; height: 22px;
+          width: 26px; height: 26px;
           background: ${color};
-          border: 2px solid white;
+          border: 2.5px solid white;
           border-radius: 50%;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.3);
           display: flex; align-items: center; justify-content: center;
-          font-size: 10px;
+          font-size: 12px;
+          cursor: pointer;
         ">${cat?.emoji || '📍'}</div>`,
-        iconSize: [22, 22],
-        iconAnchor: [11, 11],
+        iconSize: [26, 26],
+        iconAnchor: [13, 13],
       })
 
       L.marker([place.lat, place.lng], { icon })
@@ -57,15 +58,18 @@ function MapMarkers({ places, categories, onPinTap }: MapInnerProps) {
 
 export default function MapInner({ places, categories, onPinTap }: MapInnerProps) {
   return (
-    <MapContainer
-      center={HENDERSON_CENTER}
-      zoom={13}
-      className="w-full h-full"
-      zoomControl={false}
-      attributionControl={false}
-    >
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      <MapMarkers places={places} categories={categories} onPinTap={onPinTap} />
-    </MapContainer>
+    <div className="w-full h-full g2k-map">
+      <MapContainer
+        center={HENDERSON_CENTER}
+        zoom={13}
+        className="w-full h-full"
+        zoomControl={false}
+        attributionControl={false}
+      >
+        {/* CartoDB Voyager — warm tones, clean labels, closest to iOS G2K style */}
+        <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" />
+        <MapMarkers places={places} categories={categories} onPinTap={onPinTap} />
+      </MapContainer>
+    </div>
   )
 }
