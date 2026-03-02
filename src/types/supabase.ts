@@ -20,6 +20,8 @@ export type LeadStatus = 'new' | 'contacted' | 'negotiating' | 'converted' | 'lo
 
 export type NoteEntityType = 'contact' | 'lead' | 'user' | 'sponsorship'
 
+export type PartnerTier = 'premium' | 'basic'
+
 export interface Database {
   public: {
     Tables: {
@@ -35,6 +37,7 @@ export interface Database {
           website: string | null
           applied_at: string | null
           approved_at: string | null
+          partner_tier: PartnerTier | null
         }
         Insert: {
           id: string
@@ -47,6 +50,7 @@ export interface Database {
           website?: string | null
           applied_at?: string | null
           approved_at?: string | null
+          partner_tier?: PartnerTier | null
         }
         Update: {
           id?: string
@@ -59,6 +63,7 @@ export interface Database {
           website?: string | null
           applied_at?: string | null
           approved_at?: string | null
+          partner_tier?: PartnerTier | null
         }
         Relationships: []
       }
@@ -464,6 +469,27 @@ export interface Database {
         }
         Relationships: []
       }
+      partner_places: {
+        Row: {
+          id: string
+          partner_id: string
+          place_id: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          partner_id: string
+          place_id: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          partner_id?: string
+          place_id?: string
+          created_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -510,6 +536,20 @@ export interface Database {
           hour_of_day: number
           entry_count: number
           unique_visitors: number
+        }[]
+      }
+      is_partner: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
+      analytics_place_traffic_partner: {
+        Args: { p_start: string; p_end: string }
+        Returns: {
+          place_id: string
+          business_type: string | null
+          visit_count: number
+          unique_visitors: number
+          avg_dwell_seconds: number | null
         }[]
       }
       analytics_dau_mau: {

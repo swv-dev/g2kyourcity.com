@@ -48,7 +48,6 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(url)
     }
 
-    // Check admin role
     const { data: profile } = await supabase
       .from('profiles')
       .select('role')
@@ -63,9 +62,32 @@ export async function middleware(request: NextRequest) {
     }
   }
 
+  // Protect /partner — require authenticated trusted_org
+  if (pathname.startsWith('/partner')) {
+    if (!user) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/login'
+      url.searchParams.set('redirect', pathname)
+      return NextResponse.redirect(url)
+    }
+
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single()
+
+    if (profile?.role !== 'trusted_org') {
+      const url = request.nextUrl.clone()
+      url.pathname = '/'
+      url.searchParams.set('error', 'unauthorized')
+      return NextResponse.redirect(url)
+    }
+  }
+
   return supabaseResponse
 }
 
 export const config = {
-  matcher: ['/admin/:path*', '/submit/:path*'],
+  matcher: ['/admin/:path*', '/partner/:path*', '/submit/:path*'],
 }

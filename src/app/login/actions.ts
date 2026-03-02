@@ -34,6 +34,11 @@ export async function signIn(formData: FormData) {
       revalidatePath('/', 'layout')
       redirect(redirectTo || '/admin')
     }
+
+    if (profile?.role === 'trusted_org') {
+      revalidatePath('/', 'layout')
+      redirect(redirectTo || '/partner')
+    }
   }
 
   revalidatePath('/', 'layout')
