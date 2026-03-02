@@ -11,6 +11,7 @@ const navLinks = [
   { href: '/community', label: 'Get Involved' },
   { href: '/advertise', label: 'Advertise' },
   { href: '/donate', label: 'Donate' },
+  { href: '/login', label: 'Login' },
 ]
 
 export default function Navbar() {
