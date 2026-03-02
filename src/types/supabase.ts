@@ -14,6 +14,12 @@ export type DiscountType = 'percentage' | 'fixed' | 'bogo' | 'free_item'
 
 export type SponsorshipTier = 'basic' | 'premium' | 'elite'
 
+export type ContactStatus = 'new' | 'read' | 'responded' | 'archived'
+
+export type LeadStatus = 'new' | 'contacted' | 'negotiating' | 'converted' | 'lost'
+
+export type NoteEntityType = 'contact' | 'lead' | 'user' | 'sponsorship'
+
 export interface Database {
   public: {
     Tables: {
@@ -191,6 +197,222 @@ export interface Database {
         }
         Relationships: []
       }
+      contact_submissions: {
+        Row: {
+          id: string
+          name: string
+          email: string
+          phone: string | null
+          subject: string
+          message: string
+          status: ContactStatus
+          admin_notes: string | null
+          created_at: string
+          responded_at: string | null
+        }
+        Insert: {
+          id?: string
+          name: string
+          email: string
+          phone?: string | null
+          subject: string
+          message: string
+          status?: ContactStatus
+          admin_notes?: string | null
+          created_at?: string
+          responded_at?: string | null
+        }
+        Update: {
+          id?: string
+          name?: string
+          email?: string
+          phone?: string | null
+          subject?: string
+          message?: string
+          status?: ContactStatus
+          admin_notes?: string | null
+          created_at?: string
+          responded_at?: string | null
+        }
+        Relationships: []
+      }
+      advertiser_leads: {
+        Row: {
+          id: string
+          business_name: string
+          contact_name: string
+          email: string
+          phone: string | null
+          website: string | null
+          tier_interest: SponsorshipTier | null
+          message: string | null
+          source: string
+          status: LeadStatus
+          admin_notes: string | null
+          created_at: string
+          contacted_at: string | null
+          converted_at: string | null
+        }
+        Insert: {
+          id?: string
+          business_name: string
+          contact_name: string
+          email: string
+          phone?: string | null
+          website?: string | null
+          tier_interest?: SponsorshipTier | null
+          message?: string | null
+          source?: string
+          status?: LeadStatus
+          admin_notes?: string | null
+          created_at?: string
+          contacted_at?: string | null
+          converted_at?: string | null
+        }
+        Update: {
+          id?: string
+          business_name?: string
+          contact_name?: string
+          email?: string
+          phone?: string | null
+          website?: string | null
+          tier_interest?: SponsorshipTier | null
+          message?: string | null
+          source?: string
+          status?: LeadStatus
+          admin_notes?: string | null
+          created_at?: string
+          contacted_at?: string | null
+          converted_at?: string | null
+        }
+        Relationships: []
+      }
+      admin_notes: {
+        Row: {
+          id: string
+          entity_type: NoteEntityType
+          entity_id: string
+          admin_id: string
+          note: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          entity_type: NoteEntityType
+          entity_id: string
+          admin_id: string
+          note: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          entity_type?: NoteEntityType
+          entity_id?: string
+          admin_id?: string
+          note?: string
+          created_at?: string
+        }
+        Relationships: []
+      }
+      analytics_zone_events: {
+        Row: {
+          id: string
+          anon_id: string
+          zone_id: string
+          zone_type: string
+          event_type: 'entry' | 'exit'
+          occurred_at: string
+          app_version: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          anon_id: string
+          zone_id: string
+          zone_type: string
+          event_type: 'entry' | 'exit'
+          occurred_at?: string
+          app_version?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          anon_id?: string
+          zone_id?: string
+          zone_type?: string
+          event_type?: 'entry' | 'exit'
+          occurred_at?: string
+          app_version?: string | null
+          created_at?: string
+        }
+        Relationships: []
+      }
+      analytics_place_visits: {
+        Row: {
+          id: string
+          anon_id: string
+          place_id: string
+          visit_type: 'checkin' | 'detail_view'
+          dwell_seconds: number | null
+          business_type: string | null
+          occurred_at: string
+          app_version: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          anon_id: string
+          place_id: string
+          visit_type: 'checkin' | 'detail_view'
+          dwell_seconds?: number | null
+          business_type?: string | null
+          occurred_at?: string
+          app_version?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          anon_id?: string
+          place_id?: string
+          visit_type?: 'checkin' | 'detail_view'
+          dwell_seconds?: number | null
+          business_type?: string | null
+          occurred_at?: string
+          app_version?: string | null
+          created_at?: string
+        }
+        Relationships: []
+      }
+      analytics_sessions: {
+        Row: {
+          id: string
+          anon_id: string
+          session_start: string
+          session_end: string | null
+          duration_seconds: number | null
+          app_version: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          anon_id: string
+          session_start?: string
+          session_end?: string | null
+          duration_seconds?: number | null
+          app_version?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          anon_id?: string
+          session_start?: string
+          session_end?: string | null
+          duration_seconds?: number | null
+          app_version?: string | null
+          created_at?: string
+        }
+        Relationships: []
+      }
       place_deals: {
         Row: {
           id: string
@@ -250,6 +472,55 @@ export interface Database {
       is_admin: {
         Args: Record<PropertyKey, never>
         Returns: boolean
+      }
+      recent_admin_activity: {
+        Args: { lim?: number }
+        Returns: {
+          id: string
+          activity_type: string
+          title: string
+          status: string
+          created_at: string
+        }[]
+      }
+      analytics_zone_traffic: {
+        Args: { p_start: string; p_end: string; p_grain?: string }
+        Returns: {
+          zone_id: string
+          zone_type: string
+          bucket: string
+          entry_count: number
+          unique_visitors: number
+        }[]
+      }
+      analytics_place_traffic: {
+        Args: { p_start: string; p_end: string; p_type_filter?: string }
+        Returns: {
+          place_id: string
+          business_type: string | null
+          visit_count: number
+          unique_visitors: number
+          avg_dwell_seconds: number | null
+        }[]
+      }
+      analytics_peak_hours: {
+        Args: { p_zone_filter?: string; p_days?: number }
+        Returns: {
+          day_of_week: number
+          hour_of_day: number
+          entry_count: number
+          unique_visitors: number
+        }[]
+      }
+      analytics_dau_mau: {
+        Args: { p_days?: number }
+        Returns: {
+          report_date: string
+          daily_active_users: number
+          session_count: number
+          avg_session_seconds: number | null
+          monthly_active_users: number
+        }[]
       }
     }
     Enums: {

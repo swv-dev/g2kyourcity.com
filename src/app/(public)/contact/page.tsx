@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import ContactForm from './ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact Us | G2K Your City',
@@ -121,8 +122,15 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Contact Form */}
+      <section id="form" className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ContactForm />
+        </div>
+      </section>
+
       {/* Quick Links */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-navy mb-8 text-center">
             Looking for Something Specific?

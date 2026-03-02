@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import LeadForm from './LeadForm'
 
 export const metadata: Metadata = {
   title: 'Advertise with G2K | Get Your Business Seen',
@@ -320,11 +321,7 @@ export default function AdvertisePage() {
                 </ul>
 
                 <a
-                  href={`mailto:info@g2khenderson.com?subject=${encodeURIComponent(
-                    `G2K Sponsorship Inquiry — ${tier.name} Tier`
-                  )}&body=${encodeURIComponent(
-                    `Hi G2K team,\n\nI'm interested in the ${tier.name} sponsorship tier ($${tier.price}/mo) for my business.\n\nBusiness name: \nPhone: \n\nLooking forward to hearing from you!`
-                  )}`}
+                  href="#inquiry"
                   className={`block text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                     tier.highlight
                       ? 'bg-gold text-navy hover:bg-gold-dark'
@@ -457,6 +454,13 @@ export default function AdvertisePage() {
         </div>
       </section>
 
+      {/* Inquiry Form */}
+      <section id="inquiry" className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <LeadForm />
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-16 md:py-24 bg-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -469,11 +473,7 @@ export default function AdvertisePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={`mailto:info@g2khenderson.com?subject=${encodeURIComponent(
-                'G2K Sponsorship Inquiry'
-              )}&body=${encodeURIComponent(
-                'Hi G2K team,\n\nI\'m interested in sponsoring my business on G2K Henderson.\n\nBusiness name: \nPhone: \nTier I\'m considering: \n\nLooking forward to hearing from you!'
-              )}`}
+              href="#inquiry"
               className="btn-secondary text-center"
             >
               Get in Touch
