@@ -2,8 +2,13 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { Card, CardContent } from '@/components/ui/card'
 import PlaceRankingTable from '@/app/admin/analytics/PlaceRankingTable'
+import DateRangePicker from './DateRangePicker'
 
-export default async function PartnerMyPlacesPage() {
+interface PageProps {
+  searchParams: { from?: string; to?: string }
+}
+
+export default async function PartnerMyPlacesPage({ searchParams }: PageProps) {
   const supabase = await createClient()
   const {
     data: { user },
@@ -13,13 +18,17 @@ export default async function PartnerMyPlacesPage() {
     redirect('/login?redirect=/partner/my-places')
   }
 
-  const now = new Date().toISOString()
-  const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString()
+  const toDate = searchParams.to ?? new Date().toISOString().split('T')[0]
+  const fromDate =
+    searchParams.from ??
+    new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
+      .toISOString()
+      .split('T')[0]
 
   const [trafficResult, placesResult, profileResult] = await Promise.all([
     supabase.rpc('analytics_place_traffic_partner', {
-      p_start: thirtyDaysAgo,
-      p_end: now,
+      p_date_from: fromDate,
+      p_date_to: toDate,
     }),
     supabase
       .from('partner_places')
@@ -38,7 +47,12 @@ export default async function PartnerMyPlacesPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-navy mb-6">My Places</h1>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6">
+        <h1 className="text-2xl font-bold text-navy">My Places</h1>
+        {linkedPlaces.length > 0 && (
+          <DateRangePicker from={fromDate} to={toDate} />
+        )}
+      </div>
 
       {linkedPlaces.length === 0 ? (
         <Card>
@@ -66,11 +80,14 @@ export default async function PartnerMyPlacesPage() {
         <section className="mb-8">
           <Card>
             <CardContent className="p-0">
-              <PlaceRankingTable data={trafficData} />
+              <PlaceRankingTable
+                data={trafficData}
+                linkPrefix="/partner/places"
+              />
             </CardContent>
           </Card>
           <p className="text-xs text-gray-400 mt-2">
-            Showing data for the last 30 days across {linkedPlaces.length} linked place{linkedPlaces.length !== 1 ? 's' : ''}
+            Showing data for {fromDate} to {toDate} across {linkedPlaces.length} linked place{linkedPlaces.length !== 1 ? 's' : ''}
           </p>
         </section>
       )}

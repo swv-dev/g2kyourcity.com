@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import {
   Table,
   TableBody,
@@ -12,13 +13,23 @@ import { Badge } from '@/components/ui/badge'
 
 interface PlaceTrafficRow {
   place_id: string
+  place_name?: string | null
+  category?: string | null
   business_type: string | null
   visit_count: number
   unique_visitors: number
   avg_dwell_seconds: number | null
 }
 
-export default function PlaceRankingTable({ data }: { data: PlaceTrafficRow[] }) {
+interface PlaceRankingTableProps {
+  data: PlaceTrafficRow[]
+  /** When set, rows become clickable links to `${linkPrefix}/${place_id}` */
+  linkPrefix?: string
+}
+
+export default function PlaceRankingTable({ data, linkPrefix }: PlaceRankingTableProps) {
+  const router = useRouter()
+
   if (data.length === 0) {
     return (
       <div className="text-center py-12 text-gray-500">
@@ -38,13 +49,16 @@ export default function PlaceRankingTable({ data }: { data: PlaceTrafficRow[] })
 
   const maxVisits = Math.max(...data.map((d) => d.visit_count), 1)
 
+  const hasNames = data.some((r) => r.place_name)
+  const hasCategories = data.some((r) => r.category)
+
   return (
     <Table>
       <TableHeader>
         <TableRow>
           <TableHead className="w-8">#</TableHead>
-          <TableHead>Place ID</TableHead>
-          <TableHead>Type</TableHead>
+          <TableHead>{hasNames ? 'Place' : 'Place ID'}</TableHead>
+          <TableHead>{hasCategories ? 'Category' : 'Type'}</TableHead>
           <TableHead className="text-right">Visits</TableHead>
           <TableHead className="text-right">Unique</TableHead>
           <TableHead className="text-right">Avg Dwell</TableHead>
@@ -52,32 +66,60 @@ export default function PlaceRankingTable({ data }: { data: PlaceTrafficRow[] })
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((row, i) => (
-          <TableRow key={row.place_id}>
-            <TableCell className="font-mono text-gray-400">{i + 1}</TableCell>
-            <TableCell className="font-medium text-sm">{row.place_id}</TableCell>
-            <TableCell>
-              {row.business_type ? (
-                <Badge variant="secondary" className="bg-gray-100 text-gray-700">
-                  {row.business_type}
-                </Badge>
-              ) : (
-                <span className="text-gray-400">—</span>
-              )}
-            </TableCell>
-            <TableCell className="text-right font-mono">{row.visit_count}</TableCell>
-            <TableCell className="text-right font-mono">{row.unique_visitors}</TableCell>
-            <TableCell className="text-right font-mono">{formatDwell(row.avg_dwell_seconds)}</TableCell>
-            <TableCell>
-              <div className="w-full bg-gray-100 rounded-full h-2">
-                <div
-                  className="bg-gold h-2 rounded-full transition-all"
-                  style={{ width: `${(row.visit_count / maxVisits) * 100}%` }}
-                />
-              </div>
-            </TableCell>
-          </TableRow>
-        ))}
+        {data.map((row, i) => {
+          const nameDisplay = row.place_name || row.place_id
+          const typeDisplay = row.category || row.business_type
+
+          return (
+            <TableRow
+              key={row.place_id}
+              className={linkPrefix ? 'cursor-pointer' : undefined}
+              onClick={
+                linkPrefix
+                  ? () => router.push(`${linkPrefix}/${row.place_id}`)
+                  : undefined
+              }
+            >
+              <TableCell className="font-mono text-gray-400">{i + 1}</TableCell>
+              <TableCell className="font-medium text-sm">
+                {nameDisplay}
+                {linkPrefix && (
+                  <svg
+                    className="inline-block ml-1.5 text-gray-300"
+                    width="12"
+                    height="12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                )}
+              </TableCell>
+              <TableCell>
+                {typeDisplay ? (
+                  <Badge variant="secondary" className="bg-gray-100 text-gray-700">
+                    {typeDisplay}
+                  </Badge>
+                ) : (
+                  <span className="text-gray-400">—</span>
+                )}
+              </TableCell>
+              <TableCell className="text-right font-mono">{row.visit_count}</TableCell>
+              <TableCell className="text-right font-mono">{row.unique_visitors}</TableCell>
+              <TableCell className="text-right font-mono">{formatDwell(row.avg_dwell_seconds)}</TableCell>
+              <TableCell>
+                <div className="w-full bg-gray-100 rounded-full h-2">
+                  <div
+                    className="bg-gold h-2 rounded-full transition-all"
+                    style={{ width: `${(row.visit_count / maxVisits) * 100}%` }}
+                  />
+                </div>
+              </TableCell>
+            </TableRow>
+          )
+        })}
       </TableBody>
     </Table>
   )

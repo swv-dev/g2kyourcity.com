@@ -490,6 +490,39 @@ export interface Database {
         }
         Relationships: []
       }
+      places_directory: {
+        Row: {
+          place_id: string
+          place_name: string
+          category: string | null
+          address: string | null
+          latitude: number | null
+          longitude: number | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          place_id: string
+          place_name: string
+          category?: string | null
+          address?: string | null
+          latitude?: number | null
+          longitude?: number | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          place_id?: string
+          place_name?: string
+          category?: string | null
+          address?: string | null
+          latitude?: number | null
+          longitude?: number | null
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -543,13 +576,52 @@ export interface Database {
         Returns: boolean
       }
       analytics_place_traffic_partner: {
-        Args: { p_start: string; p_end: string }
+        Args: { p_date_from: string; p_date_to: string }
         Returns: {
           place_id: string
+          place_name: string | null
+          category: string | null
           business_type: string | null
           visit_count: number
           unique_visitors: number
           avg_dwell_seconds: number | null
+        }[]
+      }
+      analytics_place_summary: {
+        Args: { p_place_id: string; p_date_from: string; p_date_to: string }
+        Returns: {
+          place_id: string
+          place_name: string
+          category: string
+          current_period_visits: number
+          prior_period_visits: number
+          current_unique: number
+          prior_unique: number
+          avg_dwell_seconds: number | null
+        }[]
+      }
+      analytics_place_daily_visits: {
+        Args: { p_place_id: string; p_date_from: string; p_date_to: string }
+        Returns: {
+          visit_date: string
+          visit_count: number
+          unique_visitors: number
+        }[]
+      }
+      analytics_place_peak_hours: {
+        Args: { p_place_id: string; p_date_from: string; p_date_to: string }
+        Returns: {
+          day_of_week: number
+          hour_of_day: number
+          visit_count: number
+        }[]
+      }
+      analytics_place_also_visited: {
+        Args: { p_place_id: string; p_date_from: string; p_date_to: string; p_limit?: number }
+        Returns: {
+          place_id: string
+          place_name: string
+          co_visit_count: number
         }[]
       }
       analytics_dau_mau: {
