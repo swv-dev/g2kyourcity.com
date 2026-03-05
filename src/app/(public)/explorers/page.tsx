@@ -149,7 +149,7 @@ export default function PlansPage() {
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Free to Explore.<br />
-            <span className="text-gold">Premium to Dominate.</span>
+            <span className="text-gold">Premium to Amplify.</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             The full G2K experience is free — every place, every event, every badge.
