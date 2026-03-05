@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/henderson', label: 'Henderson' },
   { href: '/local-loop', label: 'The Local Loop' },
   { href: '/community', label: 'Get Involved' },
+  { href: '/explorers', label: 'Explorers' },
   { href: '/advertise', label: 'Advertise' },
   { href: '/donate', label: 'Donate' },
   { href: '/login', label: 'Login' },
