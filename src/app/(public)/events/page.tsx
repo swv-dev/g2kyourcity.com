@@ -147,6 +147,15 @@ export default async function EventsPage() {
                       </p>
                     )}
                   </div>
+                  <Link
+                    href={`/event/${event.id}`}
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold-dark hover:text-navy transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                    Check In
+                  </Link>
                 </div>
               ))}
             </div>
