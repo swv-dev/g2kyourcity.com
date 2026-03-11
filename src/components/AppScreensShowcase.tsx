@@ -10,45 +10,50 @@ const screens = [
     bubble: 'Featured events, local places, and curated experiences — all in one feed.',
   },
   {
-    src: '/images/app-screens/map-close.jpg',
+    src: '/images/app-screens/map-3d.jpg',
     label: 'Explore Map',
-    bubble: '3D interactive map with every local business, landmark, and hidden gem pinned.',
+    bubble: '3D interactive map with your profile photo as a pin, proximity ring, and every local spot marked.',
   },
   {
-    src: '/images/app-screens/map-overview.jpg',
-    label: 'All Places',
-    bubble: '200+ places across Henderson and Vance County — filter by category to find exactly what you need.',
+    src: '/images/app-screens/map-night.jpg',
+    label: 'Night Mode',
+    bubble: 'Explore after dark with a stunning 3D night map — every pin glows so you never miss a spot.',
+  },
+  {
+    src: '/images/app-screens/spin-disc.jpg',
+    label: 'Spin & Win',
+    bubble: 'Spin the place disc to earn XP and unlock real perks from local businesses.',
+    disclaimer: 'Perk shown is an example only. This specific reward is not currently offered by this business.',
+  },
+  {
+    src: '/images/app-screens/oxford-home.jpg',
+    label: 'Multi-County',
+    bubble: 'Switch between Henderson, Oxford, Warrenton, Franklinton, and Roxboro — 5 counties, one app.',
+  },
+  {
+    src: '/images/app-screens/place-detail.jpg',
+    label: 'Place Details',
+    bubble: 'Real photos, ratings, hours, contact info, and walking directions for every place.',
   },
   {
     src: '/images/app-screens/places.jpg',
     label: 'Places',
-    bubble: 'Browse by category with real photos, distance, and ratings. Search for anything.',
+    bubble: 'Browse 200+ places by category with real photos, distance, and ratings.',
   },
   {
-    src: '/images/app-screens/events.jpg',
+    src: '/images/app-screens/events-v2.jpg',
     label: 'Events',
-    bubble: 'Never miss what\'s happening — upcoming events, calendar view, and one-tap RSVP.',
-  },
-  {
-    src: '/images/app-screens/profile.jpg',
-    label: 'Profile',
-    bubble: 'Track your XP, climb the leaderboard, and unlock perks as you explore your city.',
-  },
-  {
-    src: '/images/app-screens/profile-stats.jpg',
-    label: 'Explorer Score',
-    bubble: 'Check-ins, badges, day streaks, and miles — see your exploration stats at a glance.',
+    bubble: 'Never miss what\'s happening — upcoming events with photos, category filters, and real community happenings.',
   },
   {
     src: '/images/app-screens/passport-trails.jpg',
     label: 'Passport Trails',
-    bubble: 'Themed trails across the Kerr-Tar region. Complete stops to earn exclusive badges.',
+    bubble: 'Themed trails across all 5 Kerr-Tar counties. Complete stops to earn exclusive badges.',
   },
   {
-    src: '/images/app-screens/ar-spin.jpg',
-    label: 'AR Perks',
-    bubble: 'Point your camera at businesses to discover them in AR — spin for real perks and rewards.',
-    disclaimer: 'Perk shown is an example only. This specific reward is not currently offered by this business.',
+    src: '/images/app-screens/profile-stats.jpg',
+    label: 'Explorer Score',
+    bubble: '973 XP, 16 check-ins, 7-day streak — track your stats and climb the leaderboard.',
   },
 ]
 
