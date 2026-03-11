@@ -4,8 +4,8 @@ import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const SimulatorShell = dynamic(
-  () => import('../simulator/SimulatorShell'),
+const AppScreensShowcase = dynamic(
+  () => import('../AppScreensShowcase'),
   { ssr: false }
 )
 
@@ -48,10 +48,10 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Interactive App Simulator */}
+          {/* App Screenshots Showcase */}
           <div className="relative flex flex-col items-center">
             <div className="transform scale-[0.85] sm:scale-90 md:scale-95 lg:scale-100 origin-top">
-              <SimulatorShell />
+              <AppScreensShowcase />
             </div>
 
             {/* App store badge */}
