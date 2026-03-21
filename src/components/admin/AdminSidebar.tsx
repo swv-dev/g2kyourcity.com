@@ -21,7 +21,7 @@ export default function AdminSidebar() {
   return (
     <aside className="w-64 bg-navy min-h-screen flex flex-col">
       <div className="p-6 border-b border-navy-light">
-        <h1 className="text-gold font-bold text-xl">G2K Admin</h1>
+        <h1 className="text-gold font-bold text-xl">G2K&trade; Admin</h1>
       </div>
       <nav className="flex-1 p-4 space-y-1">
         {navItems.map((item) => {

@@ -7,7 +7,7 @@ export default function Mission() {
         </h2>
         <div className="w-20 h-1 bg-gold mx-auto mb-8"></div>
         <p className="text-xl text-gray-600 leading-relaxed mb-8">
-          Get 2 Know Henderson is dedicated to connecting residents and visitors with the heart of our community.
+          Get to Know Henderson&trade; is dedicated to connecting residents and visitors with the heart of our community.
           We believe that every town has stories worth telling, events worth attending, and places worth discovering.
         </p>
         <p className="text-lg text-gray-600 leading-relaxed">

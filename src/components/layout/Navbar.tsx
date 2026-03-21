@@ -27,7 +27,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center">
             <Image
               src="/images/g2k_your_city_logo.png"
-              alt="Get 2 Know Your City"
+              alt="Get to Know Your City\u2122"
               width={240}
               height={80}
               className="h-16 md:h-20 w-auto"

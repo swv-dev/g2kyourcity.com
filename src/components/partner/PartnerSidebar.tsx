@@ -40,7 +40,7 @@ export default function PartnerSidebar({ orgName, partnerTier }: PartnerSidebarP
   return (
     <aside className="w-64 bg-navy min-h-screen flex flex-col">
       <div className="p-6 border-b border-navy-light">
-        <h1 className="text-gold font-bold text-xl">G2K Partner</h1>
+        <h1 className="text-gold font-bold text-xl">G2K&trade; Partner</h1>
         <p className="text-gray-400 text-sm mt-1 truncate">{orgName}</p>
         <Badge
           className={`mt-2 text-xs ${

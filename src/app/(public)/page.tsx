@@ -26,7 +26,7 @@ export default function Home() {
             <h1 className="mb-6">
               <Image
                 src="/images/g2k-your-city-logo-full.png"
-                alt="Get 2 Know Your City"
+                alt="Get to Know Your City\u2122"
                 width={500}
                 height={500}
                 className="w-full max-w-md mx-auto lg:mx-0"

@@ -10,7 +10,7 @@ export default function AppFeatures() {
           </h2>
           <div className="w-20 h-1 bg-gold mx-auto mb-6"></div>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Get 2 Know Henderson combines cutting-edge technology with local discovery
+            Get to Know Henderson&trade; combines cutting-edge technology with local discovery
             to create an experience unlike any other.
           </p>
         </div>
@@ -121,7 +121,7 @@ export default function AppFeatures() {
               For Businesses &amp; Local Government
             </h3>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Partner with Get 2 Know Henderson to reach engaged locals and visitors through powerful location-based tools.
+              Partner with Get to Know Henderson&trade; to reach engaged locals and visitors through powerful location-based tools.
             </p>
           </div>
 

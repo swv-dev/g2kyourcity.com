@@ -62,7 +62,7 @@ export default function EventsScreen({ events, categories }: EventsScreenProps) 
       {/* Nav bar with + button */}
       <div className="flex items-center justify-between px-3 py-2 bg-white/95 backdrop-blur-sm border-b border-[#F3F4F6]">
         <div className="w-7 h-7 flex-shrink-0">
-          <Image src="/images/g2k_your_city_logo.png" alt="G2K" width={28} height={28} className="object-contain" />
+          <Image src="/images/g2k_your_city_logo.png" alt="G2K\u2122" width={28} height={28} className="object-contain" />
         </div>
         <span className="text-[13px] font-semibold text-[#1B365D]">Events</span>
         {/* + button (decorative, matches iOS plus.circle.fill) */}

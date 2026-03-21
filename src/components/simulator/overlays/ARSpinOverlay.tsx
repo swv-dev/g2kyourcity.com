@@ -135,7 +135,7 @@ export default function ARSpinOverlay({ rewards, onClose }: ARSpinOverlayProps) 
             <div className="w-24 h-24 rounded-full border-2 border-[#DAA520]/40 flex items-center justify-center">
               <div className="text-center">
                 <span className="text-3xl">⭐</span>
-                <p className="text-[8px] font-bold text-[#7C4A00] mt-0.5">G2K</p>
+                <p className="text-[8px] font-bold text-[#7C4A00] mt-0.5">G2K&trade;</p>
               </div>
             </div>
           </div>

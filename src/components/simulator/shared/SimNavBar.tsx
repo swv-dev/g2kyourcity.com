@@ -13,7 +13,7 @@ export default function SimNavBar({ title }: SimNavBarProps) {
       <div className="w-7 h-7 flex-shrink-0">
         <Image
           src="/images/g2k_your_city_logo.png"
-          alt="G2K"
+          alt="G2K\u2122"
           width={28}
           height={28}
           className="object-contain"
