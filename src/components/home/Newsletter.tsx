@@ -2,7 +2,11 @@
 
 import { useState } from 'react'
 
-export default function Newsletter() {
+interface NewsletterProps {
+  description?: string
+}
+
+export default function Newsletter({ description }: NewsletterProps) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
@@ -31,8 +35,7 @@ export default function Newsletter() {
           Stay in the Loop
         </h2>
         <p className="text-gray-600 mb-8">
-          Get weekly updates on events, local news, and things to do in Henderson.
-          No spam, just the good stuff.
+          {description || 'Get weekly updates on events, local news, and things to do in Henderson. No spam, just the good stuff.'}
         </p>
 
         {status === 'success' ? (
