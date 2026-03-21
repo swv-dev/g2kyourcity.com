@@ -23,7 +23,7 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <h1 className="mb-6">
+            <h1 className="mb-6 relative inline-block">
               <Image
                 src="/images/g2k-your-city-logo-full.png"
                 alt="Get to Know Your City\u2122"
@@ -32,6 +32,7 @@ export default function Home() {
                 className="w-full max-w-md mx-auto lg:mx-0"
                 priority
               />
+              <span className="absolute top-2 -right-2 md:-right-4 text-sm md:text-base font-semibold text-navy select-none">&trade;</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
               Discover local events, hidden gems, and unique experiences in your community.

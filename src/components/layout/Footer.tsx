@@ -58,13 +58,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1">
-            <Image
-              src="/images/g2k_henderson_logo.png"
-              alt="Get to Know Henderson\u2122"
-              width={160}
-              height={53}
-              className="h-12 w-auto brightness-0 invert mb-4"
-            />
+            <div className="relative inline-block mb-4">
+              <Image
+                src="/images/g2k_henderson_logo.png"
+                alt="Get to Know Henderson\u2122"
+                width={160}
+                height={53}
+                className="h-12 w-auto brightness-0 invert"
+              />
+              <span className="absolute -top-0.5 -right-3 text-[9px] font-semibold text-white select-none">&trade;</span>
+            </div>
             <p className="text-gray-300 text-sm">
               Discover local events, hidden gems, and unique experiences in your community. One app, every city.
             </p>

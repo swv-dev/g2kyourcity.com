@@ -24,7 +24,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center relative">
             <Image
               src="/images/g2k_your_city_logo.png"
               alt="Get to Know Your City\u2122"
@@ -33,6 +33,7 @@ export default function Navbar() {
               className="h-16 md:h-20 w-auto"
               priority
             />
+            <span className="absolute -top-0.5 -right-3 text-[8px] md:text-[10px] font-semibold text-navy select-none">&trade;</span>
           </Link>
 
           {/* Desktop Navigation */}
