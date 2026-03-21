@@ -202,7 +202,7 @@ export default function LeadsTable({ leads }: { leads: Lead[] }) {
                   href={`mailto:${selected.email}?subject=${encodeURIComponent(
                     `G2K Sponsorship — ${selected.business_name}`
                   )}&body=${encodeURIComponent(
-                    `Hi ${selected.contact_name},\n\nThanks for your interest in advertising on G2K Henderson!\n\n`
+                    `Hi ${selected.contact_name},\n\nThanks for your interest in advertising on G2K Henderson\u2122!\n\n`
                   )}`}
                   className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-3"
                 >

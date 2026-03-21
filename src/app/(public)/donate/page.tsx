@@ -59,7 +59,7 @@ export default function DonatePage() {
   const handleDonate = () => {
     if (!activeAmount || activeAmount < 1) return
     const subject = `G2K Donation — $${activeAmount} ${frequency === 'monthly' ? '/ month' : 'one-time'}`
-    const body = `I'd like to donate $${activeAmount} ${frequency === 'monthly' ? 'monthly' : '(one-time)'} to support G2K Your City.\n\nPlease send me payment instructions.`
+    const body = `I'd like to donate $${activeAmount} ${frequency === 'monthly' ? 'monthly' : '(one-time)'} to support G2K Your City\u2122.\n\nPlease send me payment instructions.`
     window.location.href = `mailto:info@g2khenderson.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
 
@@ -259,7 +259,7 @@ export default function DonatePage() {
                 </div>
                 <div>
                   <div className="font-semibold text-navy">Stephen Wolf</div>
-                  <div className="text-gray-500 text-sm">Founder, G2K Your City</div>
+                  <div className="text-gray-500 text-sm">Founder, G2K Your City&trade;</div>
                 </div>
               </div>
             </div>

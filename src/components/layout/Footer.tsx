@@ -5,7 +5,7 @@ const footerLinks = {
   explore: [
     { href: '/henderson', label: 'Henderson, NC' },
     { href: '/local-loop', label: 'The Local Loop' },
-    { href: '/advertise', label: 'Advertise with G2K' },
+    { href: '/advertise', label: 'Advertise with G2K\u2122' },
   ],
   support: [
     { href: '/donate', label: 'Donate' },
@@ -60,7 +60,7 @@ export default function Footer() {
           <div className="col-span-1">
             <Image
               src="/images/g2k_henderson_logo.png"
-              alt="Get 2 Know Henderson"
+              alt="Get to Know Henderson\u2122"
               width={160}
               height={53}
               className="h-12 w-auto brightness-0 invert mb-4"
@@ -129,7 +129,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} G2K Your City. All rights reserved.
+            &copy; {new Date().getFullYear()} G2K Your City&trade;. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {footerLinks.legal.map((link) => (

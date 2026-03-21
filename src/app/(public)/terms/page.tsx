@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | G2K Your City',
-  description: 'Terms of service for G2K Your City app and website.',
+  title: 'Terms of Service | G2K Your City\u2122',
+  description: 'Terms of service for G2K Your City\u2122 app and website.',
 }
 
 export default function TermsPage() {
@@ -21,7 +21,7 @@ export default function TermsPage() {
             1. Acceptance of Terms
           </h2>
           <p className="text-gray-600 mb-6">
-            By accessing or using G2K Your City (&quot;G2K,&quot; &quot;we,&quot; &quot;our&quot;), including our website at g2kyourcity.com and the G2K mobile application, you agree to be bound by these Terms of Service. If you do not agree, please do not use the platform.
+            By accessing or using G2K Your City&trade; (&quot;G2K,&quot; &quot;we,&quot; &quot;our&quot;), including our website at g2kyourcity.com and the G2K&trade; mobile application, you agree to be bound by these Terms of Service. If you do not agree, please do not use the platform.
           </p>
 
           <h2 className="text-2xl font-bold text-navy mt-8 mb-4">
@@ -74,7 +74,7 @@ export default function TermsPage() {
             7. Intellectual Property
           </h2>
           <p className="text-gray-600 mb-6">
-            The G2K platform, including its design, features, code, and branding, is owned by G2K Your City. You may not copy, modify, or distribute any part of the platform without our written permission.
+            The G2K&trade; platform, including its design, features, code, and branding, is owned by G2K Your City&trade;. You may not copy, modify, or distribute any part of the platform without our written permission.
           </p>
 
           <h2 className="text-2xl font-bold text-navy mt-8 mb-4">
@@ -88,7 +88,7 @@ export default function TermsPage() {
             9. Limitation of Liability
           </h2>
           <p className="text-gray-600 mb-6">
-            To the maximum extent permitted by law, G2K Your City shall not be liable for any indirect, incidental, special, or consequential damages arising out of your use of the platform.
+            To the maximum extent permitted by law, G2K Your City&trade; shall not be liable for any indirect, incidental, special, or consequential damages arising out of your use of the platform.
           </p>
 
           <h2 className="text-2xl font-bold text-navy mt-8 mb-4">

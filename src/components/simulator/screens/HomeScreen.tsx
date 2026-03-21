@@ -43,7 +43,7 @@ export default function HomeScreen({ places, categories, events, experiences, on
 
   return (
     <div className="h-full flex flex-col">
-      <SimNavBar title="G2K Henderson" />
+      <SimNavBar title="G2K Henderson\u2122" />
       <div className="flex-1 overflow-y-auto pb-16 scrollbar-hide bg-[#F8F9FA]">
         {/* Hero card — matches iOS: navy gradient, decorative yellow circles, 20pt xl radius */}
         <div className="mx-3 mt-3 rounded-[16px] overflow-hidden relative" style={{ height: 140 }} data-tour="hero-card">

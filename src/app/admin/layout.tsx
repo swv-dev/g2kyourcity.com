@@ -4,7 +4,7 @@ import AdminSidebar from '@/components/admin/AdminSidebar'
 import AdminHeader from '@/components/admin/AdminHeader'
 
 export const metadata = {
-  title: 'Admin | G2K Your City',
+  title: 'Admin | G2K Your City\u2122',
 }
 
 export default async function AdminLayout({

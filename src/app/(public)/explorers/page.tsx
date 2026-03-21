@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Explorers | G2K Your City',
+  title: 'Explorers | G2K Your City\u2122',
   description:
     'Explore your city for free or upgrade to unlock cloud sync, boosted rewards, exclusive map skins, and more. Choose the tier that fits your adventure.',
   openGraph: {

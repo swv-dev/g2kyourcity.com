@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 import LoginForm from './LoginForm'
 
 export const metadata = {
-  title: 'Sign In | G2K Your City',
+  title: 'Sign In | G2K Your City\u2122',
 }
 
 export default function LoginPage() {

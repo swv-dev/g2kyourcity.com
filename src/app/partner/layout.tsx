@@ -4,7 +4,7 @@ import PartnerSidebar from '@/components/partner/PartnerSidebar'
 import PartnerHeader from '@/components/partner/PartnerHeader'
 
 export const metadata = {
-  title: 'Partner Portal | G2K Your City',
+  title: 'Partner Portal | G2K Your City\u2122',
 }
 
 export default async function PartnerLayout({

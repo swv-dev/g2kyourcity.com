@@ -3,7 +3,7 @@ import Link from 'next/link'
 import LeadForm from './LeadForm'
 
 export const metadata: Metadata = {
-  title: 'Advertise with G2K | Get Your Business Seen',
+  title: 'Advertise with G2K\u2122 | Get Your Business Seen',
   description:
     'Sponsor your business on G2K and reach every local in Henderson. Featured listings, AR emblems, deals, and more.',
   openGraph: {

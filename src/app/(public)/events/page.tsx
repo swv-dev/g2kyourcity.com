@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 
 export const metadata: Metadata = {
-  title: 'Events | G2K Your City',
+  title: 'Events | G2K Your City\u2122',
   description:
     'Upcoming events in Henderson and Vance County, NC. Festivals, community gatherings, markets, and more.',
   openGraph: {

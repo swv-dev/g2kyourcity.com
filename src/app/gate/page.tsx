@@ -37,7 +37,7 @@ export default function GatePage() {
             <span className="text-3xl">🌍</span>
           </div>
           <h1 className="text-2xl font-bold text-white tracking-tight">
-            G2K Your City
+            G2K Your City&trade;
           </h1>
           <p className="text-slate-500 text-sm mt-1">
             This site is currently under development
@@ -72,7 +72,7 @@ export default function GatePage() {
         </form>
 
         <p className="text-slate-700 text-xs text-center mt-8">
-          Get to Know Your City &copy; {new Date().getFullYear()}
+          Get to Know Your City&trade; &copy; {new Date().getFullYear()}
         </p>
       </div>
     </div>

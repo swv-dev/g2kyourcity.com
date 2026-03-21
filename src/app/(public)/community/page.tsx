@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Get Involved | G2K Your City',
+  title: 'Get Involved | G2K Your City\u2122',
   description:
     'Submit local events, recommend businesses, and help build the definitive guide to Henderson and Vance County.',
   openGraph: {

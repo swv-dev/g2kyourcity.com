@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Delete My Data | G2K Your City',
-  description: 'Request deletion of your G2K Your City account and associated data.',
+  title: 'Delete My Data | G2K Your City\u2122',
+  description: 'Request deletion of your G2K Your City\u2122 account and associated data.',
 }
 
 export default function DataDeletionPage() {
@@ -21,7 +21,7 @@ export default function DataDeletionPage() {
             Your Right to Deletion
           </h2>
           <p className="text-gray-600 mb-6">
-            You have the right to request deletion of your G2K Your City account and all personal data associated with it. We take your privacy seriously and will process your request promptly.
+            You have the right to request deletion of your G2K Your City&trade; account and all personal data associated with it. We take your privacy seriously and will process your request promptly.
           </p>
 
           <h2 className="text-2xl font-bold text-navy mt-8 mb-4">
@@ -41,7 +41,7 @@ export default function DataDeletionPage() {
           </h2>
           <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-6">
             <li><strong>Anonymous analytics data:</strong> Aggregated, anonymous usage data (zone visits, session counts) is not linked to your identity and cannot be deleted because it cannot be traced back to you. See our <a href="/privacy" className="text-navy hover:text-gold">Privacy Policy</a> for details on how anonymous data is collected and used.</li>
-            <li><strong>Local device data:</strong> Explorer score, badges, check-in history, and other gamification data stored on your device is not affected by server-side deletion. To remove local data, delete the G2K Henderson app from your device.</li>
+            <li><strong>Local device data:</strong> Explorer score, badges, check-in history, and other gamification data stored on your device is not affected by server-side deletion. To remove local data, delete the G2K Henderson&trade; app from your device.</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-navy mt-8 mb-4">

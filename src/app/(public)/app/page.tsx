@@ -3,13 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Get the App | G2K Your City',
+  title: 'Get the App | G2K Your City\u2122',
   description:
-    'Download the G2K Your City app for iOS. Discover local events, hidden gems, AR experiences, and exclusive deals in Henderson, NC.',
+    'Download the G2K Your City\u2122 app for iOS. Discover local events, hidden gems, AR experiences, and exclusive deals in Henderson, NC.',
   openGraph: {
-    title: 'Get the G2K App',
+    title: 'Get the G2K\u2122 App',
     description:
-      'Download the G2K Your City app and start exploring Henderson.',
+      'Download the G2K Your City\u2122 app and start exploring Henderson.',
     url: 'https://g2kyourcity.com/app',
   },
 }

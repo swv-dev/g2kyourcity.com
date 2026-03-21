@@ -3,11 +3,11 @@ import Link from 'next/link'
 import ContactForm from './ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | G2K Your City',
+  title: 'Contact Us | G2K Your City\u2122',
   description:
-    'Get in touch with the G2K team. Questions, partnerships, sponsorships, or just want to say hello.',
+    'Get in touch with the G2K\u2122 team. Questions, partnerships, sponsorships, or just want to say hello.',
   openGraph: {
-    title: 'Contact G2K Your City',
+    title: 'Contact G2K Your City\u2122',
     description: 'Reach out to the G2K team in Henderson, NC.',
     url: 'https://g2kyourcity.com/contact',
   },

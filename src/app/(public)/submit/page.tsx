@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import SubmitEventForm from './SubmitEventForm'
 
 export const metadata = {
-  title: 'Submit Event | G2K Your City',
+  title: 'Submit Event | G2K Your City\u2122',
 }
 
 export default async function SubmitPage() {

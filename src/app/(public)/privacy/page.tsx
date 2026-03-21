@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | G2K Your City',
-  description: 'Privacy policy for G2K Your City app and website.',
+  title: 'Privacy Policy | G2K Your City\u2122',
+  description: 'Privacy policy for G2K Your City\u2122 app and website.',
 }
 
 export default function PrivacyPage() {
@@ -21,7 +21,7 @@ export default function PrivacyPage() {
             1. Information We Collect
           </h2>
           <p className="text-gray-600 mb-4">
-            When you use G2K Your City (&quot;G2K,&quot; &quot;we,&quot; &quot;our&quot;), we may collect the following information:
+            When you use G2K Your City&trade; (&quot;G2K,&quot; &quot;we,&quot; &quot;our&quot;), we may collect the following information:
           </p>
           <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-6">
             <li><strong>Account Information:</strong> Name, email address, organization name, phone number, and website when you create an account or apply.</li>
@@ -122,7 +122,7 @@ export default function PrivacyPage() {
             11. Governing Law
           </h2>
           <p className="text-gray-600 mb-6">
-            This privacy policy and your use of G2K Your City are governed by and construed in accordance with the laws of the State of North Carolina, without regard to its conflict of law provisions. Any disputes arising under this policy shall be subject to the exclusive jurisdiction of the courts located in Vance County, North Carolina.
+            This privacy policy and your use of G2K Your City&trade; are governed by and construed in accordance with the laws of the State of North Carolina, without regard to its conflict of law provisions. Any disputes arising under this policy shall be subject to the exclusive jurisdiction of the courts located in Vance County, North Carolina.
           </p>
 
           <h2 className="text-2xl font-bold text-navy mt-8 mb-4">

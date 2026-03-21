@@ -38,13 +38,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const event = await getEvent(id)
 
   if (!event) {
-    return { title: 'Event Not Found | G2K Your City' }
+    return { title: 'Event Not Found | G2K Your City\u2122' }
   }
 
   const description = (event.description || '').slice(0, 160)
 
   return {
-    title: `${event.title} | G2K Your City`,
+    title: `${event.title} | G2K Your City\u2122`,
     description,
     openGraph: {
       title: event.title,
@@ -68,7 +68,7 @@ export default async function EventCheckInPage({ params }: PageProps) {
           This event may have ended or the link may be invalid.
         </p>
         <a href="/" className="btn-secondary mt-8 inline-block rounded-full">
-          Visit G2K Your City
+          Visit G2K Your City&trade;
         </a>
       </div>
     )
